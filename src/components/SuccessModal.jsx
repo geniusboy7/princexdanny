@@ -29,21 +29,9 @@ const SuccessModal = ({ onClose, formData }) => {
         const xOffset = 10;
         const yOffset = 10;
         const cardWidthPx = 320;
-        const cardHeightPx = 420;
-        const ratio = pdfWidth / cardWidthPx;
-        const pdfHeight = cardHeightPx * ratio;
 
         doc.html(cardRef.current, {
             callback: function (doc) {
-                // Manually add the clickable link over the "Get Directions" button area
-                // The button is roughly at the bottom of the card
-                // Button height is ~35px, width ~140px in original card
-                const btnWidthPdf = 60; // Approximate
-                const btnHeightPdf = 10; // Approximate
-                const btnXPdf = xOffset + (pdfWidth / 2) - (btnWidthPdf / 2);
-                const btnYPdf = yOffset + pdfHeight - 25; // Adjust based on layout
-
-                doc.link(btnXPdf, btnYPdf, btnWidthPdf, btnHeightPdf, { url: WEDDING_DETAILS.mapsUrl });
                 doc.save(`wedding-invite-${formData.name.toLowerCase().replace(/\s+/g, '-')}.pdf`);
             },
             x: xOffset,
@@ -55,9 +43,9 @@ const SuccessModal = ({ onClose, formData }) => {
 
     const addToCalendar = () => {
         const event = {
-            title: `${WEDDING_DETAILS.bride} & ${WEDDING_DETAILS.groom}'s Wedding`,
-            description: `Join us for the wedding of ${WEDDING_DETAILS.fullNameBride} and ${WEDDING_DETAILS.fullNameGroom}`,
-            location: `${WEDDING_DETAILS.venue}, ${WEDDING_DETAILS.location}`,
+            title: `${WEDDING_DETAILS.groom} & ${WEDDING_DETAILS.bride}'s Wedding`,
+            description: `Join us for the wedding of ${WEDDING_DETAILS.fullNameGroom} and ${WEDDING_DETAILS.fullNameBride}. Location details will be sent to you via email.`,
+            location: "Location details sent via email",
             start: WEDDING_DETAILS.targetDate.replace(/[-:]/g, ''),
             end: "20260808T233000"
         };
@@ -77,7 +65,7 @@ const SuccessModal = ({ onClose, formData }) => {
                     <div className="check-icon">✓</div>
                     <h2>Thank you for RSVPing!</h2>
                     <p>{isAttending
-                        ? `We are so excited to see you at ${WEDDING_DETAILS.venue}.`
+                        ? "We are so excited to celebrate with you. Location details will be sent to you via email shortly."
                         : "We're sorry you couldn't join us."
                     }</p>
                 </div>
@@ -86,7 +74,7 @@ const SuccessModal = ({ onClose, formData }) => {
                     <div className="invitation-download-section">
                         <h3>Your Personalized Card</h3>
                         <p className="personalized-msg">
-                            Thank you for accepting our Invitation, <strong>{formData.name}{formData.plusOne === 'yes' ? ' & guest' : ''}</strong>.
+                            Thank you for accepting our Invitation, <strong>{formData.name}</strong>.
                         </p>
 
                         <div className="card-container">
@@ -96,21 +84,18 @@ const SuccessModal = ({ onClose, formData }) => {
                                         <h4 className="card-header-text">Wedding Invitation</h4>
 
                                         <div className="card-main-content">
-                                            <h2 className="card-names">{WEDDING_DETAILS.bride} & {WEDDING_DETAILS.groom}</h2>
+                                            <h2 className="card-names">{WEDDING_DETAILS.groom} & {WEDDING_DETAILS.bride}</h2>
                                             <div className="card-details">
-                                                <p className="card-guest-name">For: {formData.name}{formData.plusOne === 'yes' ? ' & Guest' : ''}</p>
+                                                <p className="card-guest-name">For: {formData.name}</p>
                                                 <div className="separator-line"></div>
                                                 <p className="card-date">{WEDDING_DETAILS.displayDate}</p>
                                                 <p className="card-time">{WEDDING_DETAILS.time}</p>
-                                                <p className="card-venue">{WEDDING_DETAILS.venue}</p>
-                                                <p className="card-location">{WEDDING_DETAILS.location}</p>
+                                                <p className="card-location">Location sent via email</p>
                                             </div>
                                         </div>
 
                                         <div className="card-footer">
-                                            <a href={WEDDING_DETAILS.mapsUrl} className="card-maps-link" target="_blank" rel="noopener noreferrer">
-                                                Get Directions
-                                            </a>
+                                            <span className="card-maps-link">Location details sent via email</span>
                                         </div>
                                     </div>
                                 </div>

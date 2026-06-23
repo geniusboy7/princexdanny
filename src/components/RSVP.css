@@ -34,6 +34,13 @@
     letter-spacing: 1px;
 }
 
+.field-hint {
+    font-size: 0.8rem;
+    color: var(--coffee-brown);
+    opacity: 0.7;
+    margin: -0.3rem 0 0;
+}
+
 .form-group input,
 .form-group textarea {
     padding: 1rem;

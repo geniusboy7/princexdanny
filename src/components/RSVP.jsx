@@ -1,15 +1,13 @@
 import React, { useState } from 'react';
 import SuccessModal from './SuccessModal';
+import { WEDDING_DETAILS } from '../constants/wedding';
 import './RSVP.css';
 
 const RSVP = () => {
     const [formData, setFormData] = useState({
         name: '',
         email: '',
-        attending: 'yes',
-        plusOne: 'no',
-        plusOneName: '',
-        dietary: ''
+        attending: 'yes'
     });
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [showSuccess, setShowSuccess] = useState(false);
@@ -52,7 +50,7 @@ const RSVP = () => {
         <section className="rsvp" id="rsvp">
             <div className="container small">
                 <h2 className="section-title">RSVP</h2>
-                <p className="rsvp-intro">We would be honored to have you with us. Please let us know if you can attend by June 30th, 2026.</p>
+                <p className="rsvp-intro">We would be honored to have you with us. Please let us know if you can attend by {WEDDING_DETAILS.rsvpDeadline}.</p>
 
                 <form className="rsvp-form" onSubmit={handleSubmit}>
                     <div className="form-group">
@@ -61,8 +59,9 @@ const RSVP = () => {
                     </div>
 
                     <div className="form-group">
-                        <label htmlFor="email">Email (Optional)</label>
-                        <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} placeholder="your@email.com" />
+                        <label htmlFor="email">Email</label>
+                        <input type="email" id="email" name="email" required value={formData.email} onChange={handleChange} placeholder="your@email.com" />
+                        <p className="field-hint">We'll send your location details here once you RSVP.</p>
                     </div>
 
                     <div className="form-group">
@@ -79,36 +78,6 @@ const RSVP = () => {
                         </div>
                     </div>
 
-                    {formData.attending === 'yes' && (
-                        <>
-                            <div className="form-group animate-in">
-                                <label>Bringing a Plus One?</label>
-                                <div className="radio-group">
-                                    <label className="radio-label">
-                                        <input type="radio" name="plusOne" value="yes" checked={formData.plusOne === 'yes'} onChange={handleChange} />
-                                        <span>Yes</span>
-                                    </label>
-                                    <label className="radio-label">
-                                        <input type="radio" name="plusOne" value="no" checked={formData.plusOne === 'no'} onChange={handleChange} />
-                                        <span>No</span>
-                                    </label>
-                                </div>
-                            </div>
-
-                            {formData.plusOne === 'yes' && (
-                                <div className="form-group animate-in">
-                                    <label htmlFor="plusOneName">Plus One Name</label>
-                                    <input type="text" id="plusOneName" name="plusOneName" required value={formData.plusOneName} onChange={handleChange} placeholder="Enter their full name" />
-                                </div>
-                            )}
-                        </>
-                    )}
-
-                    <div className="form-group">
-                        <label htmlFor="dietary">Dietary Restrictions (Optional)</label>
-                        <textarea id="dietary" name="dietary" value={formData.dietary} onChange={handleChange} placeholder="Allergies, Vegan, etc."></textarea>
-                    </div>
-
                     <button type="submit" className="btn-primary" disabled={isSubmitting}>
                         {isSubmitting ? 'Sending...' : 'Send RSVP'}
                     </button>
@@ -120,10 +89,7 @@ const RSVP = () => {
                 setFormData({
                     name: '',
                     email: '',
-                    attending: 'yes',
-                    plusOne: 'no',
-                    plusOneName: '',
-                    dietary: ''
+                    attending: 'yes'
                 });
             }} formData={formData} />}
         </section>
