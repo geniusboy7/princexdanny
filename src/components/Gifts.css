@@ -1,0 +1,109 @@
+.gifts {
+    padding: 8rem 2rem;
+    background-color: var(--white);
+    text-align: center;
+}
+
+.gifts-intro {
+    max-width: 640px;
+    margin: 0 auto;
+    color: var(--coffee-brown);
+    line-height: 1.7;
+    font-size: 1.05rem;
+}
+
+.gifts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 4rem;
+    text-align: left;
+}
+
+.gift-card {
+    padding: 2.5rem;
+    background-color: var(--off-white);
+    border: 1px solid rgba(197, 160, 89, 0.35);
+    border-radius: 8px;
+    box-shadow: 0 12px 30px rgba(54, 38, 36, 0.06);
+    transition: var(--transition-smooth);
+}
+
+.gift-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(54, 38, 36, 0.1);
+    border-color: var(--rustic-gold);
+}
+
+.gift-title {
+    color: var(--primary-teal);
+    font-family: var(--font-serif-alt);
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+    margin-bottom: 1.75rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(197, 160, 89, 0.25);
+}
+
+.gift-rows {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+    margin: 0;
+}
+
+.gift-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.gift-label {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--rustic-gold);
+    font-weight: 600;
+}
+
+.gift-detail {
+    margin: 0;
+}
+
+.gift-value {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    color: var(--coffee-brown);
+    font-size: 1.05rem;
+    font-weight: 500;
+    font-variant-numeric: tabular-nums;
+    word-break: break-word;
+}
+
+.copy-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border: 1px solid rgba(197, 160, 89, 0.4);
+    border-radius: 6px;
+    background: transparent;
+    color: var(--rustic-gold);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.copy-btn:hover {
+    background: var(--rustic-gold);
+    color: var(--white);
+}
+
+.copy-btn.copied {
+    border-color: var(--primary-teal);
+    color: var(--primary-teal);
+    background: transparent;
+}

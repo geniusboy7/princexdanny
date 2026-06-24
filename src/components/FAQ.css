@@ -15,25 +15,61 @@
 
 .faq-item {
     background-color: var(--white);
-    padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
-    transition: transform 0.3s ease;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
 }
 
-.faq-item:hover {
-    transform: translateY(-5px);
+.faq-item.open {
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.07);
 }
 
 .faq-question {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.75rem 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
     font-family: var(--font-heading);
     color: var(--primary-teal);
     font-size: 1.2rem;
-    margin-bottom: 0.5rem;
+}
+
+.faq-chevron {
+    flex-shrink: 0;
+    color: var(--rustic-gold);
+    transition: transform 0.35s ease;
+}
+
+.faq-item.open .faq-chevron {
+    transform: rotate(180deg);
+}
+
+/* Smooth height animation: collapsed 0fr -> expanded 1fr. */
+.faq-answer-wrap {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.35s ease;
+}
+
+.faq-item.open .faq-answer-wrap {
+    grid-template-rows: 1fr;
+}
+
+.faq-answer-inner {
+    overflow: hidden;
 }
 
 .faq-answer {
     color: var(--coffee-brown);
     line-height: 1.6;
     font-size: 0.95rem;
+    padding: 0 2rem 1.75rem;
+    margin: 0;
 }

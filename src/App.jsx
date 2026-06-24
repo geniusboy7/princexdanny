@@ -7,6 +7,7 @@ import Gallery from './components/Gallery';
 import RSVP from './components/RSVP';
 import Menu from './components/Menu';
 import FAQ from './components/FAQ';
+import Gifts from './components/Gifts';
 import { WEDDING_DETAILS } from './constants/wedding';
 import './index.css';
 
@@ -32,10 +33,11 @@ function App() {
           <div id="gallery"><Gallery /></div>
 
           <div id="faqs"><FAQ /></div>
+          <div id="gifts"><Gifts /></div>
           <div id="rsvp"><RSVP /></div>
 
           <footer className="footer">
-            <p className="footer-initials">P&D</p>
+            <p className="footer-initials">{WEDDING_DETAILS.groom} & {WEDDING_DETAILS.bride}</p>
             <p className="footer-date">{WEDDING_DETAILS.displayDate}</p>
           </footer>
         </div>

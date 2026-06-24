@@ -68,6 +68,11 @@ const SuccessModal = ({ onClose, formData }) => {
                         ? "We are so excited to celebrate with you. Location details will be sent to you via email shortly."
                         : "We're sorry you couldn't join us."
                     }</p>
+                    {isAttending && (
+                        <p className="email-check-note">
+                            Please check your inbox, and your spam or junk folder, for the email.
+                        </p>
+                    )}
                 </div>
 
                 {isAttending ? (

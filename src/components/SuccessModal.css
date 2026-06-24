@@ -43,6 +43,18 @@
     margin-bottom: 3rem;
 }
 
+.email-check-note {
+    margin-top: 1rem;
+    padding: 0.75rem 1rem;
+    display: inline-block;
+    background: rgba(197, 160, 89, 0.12);
+    border: 1px solid rgba(197, 160, 89, 0.35);
+    border-radius: 6px;
+    color: var(--coffee-brown);
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
 .check-icon {
     width: 60px;
     height: 60px;

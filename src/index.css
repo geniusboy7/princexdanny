@@ -85,9 +85,9 @@ button {
 }
 
 .footer-initials {
-  font-family: var(--font-serif-alt);
-  font-size: 1.5rem;
-  letter-spacing: 3px;
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  letter-spacing: 1px;
   margin-bottom: 0.5rem;
   color: var(--rustic-gold);
 }

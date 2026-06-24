@@ -1,6 +1,14 @@
+import { useState } from 'react';
+import { ChevronDown } from 'lucide-react';
 import './FAQ.css';
 
 const FAQ = () => {
+    const [openIndex, setOpenIndex] = useState(null);
+
+    const toggle = (index) => {
+        setOpenIndex((prev) => (prev === index ? null : index));
+    };
+
     const faqs = [
         {
             question: "What time should I arrive?",
@@ -41,12 +49,26 @@ const FAQ = () => {
             <div className="container">
                 <h2 className="section-title">Common Questions</h2>
                 <div className="faq-grid">
-                    {faqs.map((faq, index) => (
-                        <div key={index} className="faq-item">
-                            <h3 className="faq-question">{faq.question}</h3>
-                            <p className="faq-answer">{faq.answer}</p>
-                        </div>
-                    ))}
+                    {faqs.map((faq, index) => {
+                        const isOpen = openIndex === index;
+                        return (
+                            <div key={index} className={`faq-item ${isOpen ? 'open' : ''}`}>
+                                <button
+                                    className="faq-question"
+                                    onClick={() => toggle(index)}
+                                    aria-expanded={isOpen}
+                                >
+                                    <span>{faq.question}</span>
+                                    <ChevronDown className="faq-chevron" size={20} />
+                                </button>
+                                <div className="faq-answer-wrap">
+                                    <div className="faq-answer-inner">
+                                        <p className="faq-answer">{faq.answer}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        );
+                    })}
                 </div>
             </div>
         </section>

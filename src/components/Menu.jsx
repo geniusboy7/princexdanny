@@ -29,6 +29,7 @@ const Menu = () => {
                     <li onClick={() => scrollToSection('details')}>Schedule & Venue</li>
                     <li onClick={() => scrollToSection('gallery')}>Gallery</li>
                     <li onClick={() => scrollToSection('faqs')}>FAQs</li>
+                    <li onClick={() => scrollToSection('gifts')}>Gifts</li>
                     <li onClick={() => scrollToSection('rsvp')}>RSVP</li>
                 </ul>
             </div>
