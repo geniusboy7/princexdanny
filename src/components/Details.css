@@ -98,22 +98,15 @@
 }
 
 .location-note {
-    margin-bottom: 1rem;
-    color: var(--coffee-brown);
-    line-height: 1.6;
-}
-
-.cocktail-note {
     margin-bottom: 2rem;
     color: var(--coffee-brown);
-    font-style: italic;
     line-height: 1.6;
 }
 
 .color-grid {
     display: grid;
-    /* minmax(0, 1fr) keeps all four columns equal regardless of label length. */
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    /* minmax(0, 1fr) keeps all columns equal regardless of label length. */
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 1.25rem;
     margin-top: 2rem;
 }

@@ -23,8 +23,8 @@ const FAQ = () => {
             answer: "This invitation admits one guest. Should you require further clarification, kindly reach out to the numbers listed for RSVPs."
         },
         {
-            question: "Where is the ceremony and cocktail hour taking place?",
-            answer: "At the same venue. You will receive details of the location via email once you RSVP."
+            question: "Where is the ceremony taking place?",
+            answer: "You will receive details of the location via email once you RSVP."
         },
         {
             question: "Is there parking available?",

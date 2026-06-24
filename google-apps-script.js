@@ -26,7 +26,7 @@ var EVENT_DETAILS = {
     venue: "Glass Garden Events Center",
     location: "Accra, Ghana",
     date: "August 8th, 2026",
-    time: "3:30 PM",
+    time: "3:00 PM",
     mapsUrl: "https://maps.app.goo.gl/a3ij18RY6yqjSVNk8"
 };
 // ---------------------------------------------------------------------------
@@ -83,7 +83,7 @@ function sendLocationEmail(name, email) {
             '<h1 style="font-size: 26px; letter-spacing: 1px; color: #00827E; margin: 0 0 4px;">Prince &amp; Daniella</h1>' +
             '<p style="font-size: 13px; letter-spacing: 2px; text-transform: uppercase; color: #C19A4B; margin: 0 0 24px;">You\'re invited &mdash; here are the details</p>' +
             '<p style="font-size: 16px; line-height: 1.6;">Dear ' + escapeHtml(firstName) + ',</p>' +
-            '<p style="font-size: 16px; line-height: 1.6;">Thank you for your RSVP! We can\'t wait to celebrate with you. As promised, here are the details for the ceremony and the short cocktail hour that follows.</p>' +
+            '<p style="font-size: 16px; line-height: 1.6;">Thank you for your RSVP! We can\'t wait to celebrate with you. As promised, here are the details for the ceremony.</p>' +
             '<table style="width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 16px;">' +
                 row("Venue", escapeHtml(d.venue)) +
                 row("Address", escapeHtml(d.location)) +
@@ -101,7 +101,7 @@ function sendLocationEmail(name, email) {
     var text =
         "Prince & Daniella\n\n" +
         "Dear " + firstName + ",\n\n" +
-        "Thank you for your RSVP! Here are the details for the ceremony and the short cocktail hour that follows.\n\n" +
+        "Thank you for your RSVP! Here are the details for the ceremony.\n\n" +
         "Venue: " + d.venue + "\n" +
         "Address: " + d.location + "\n" +
         "Date: " + d.date + "\n" +

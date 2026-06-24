@@ -22,13 +22,10 @@ const Details = () => {
                 <h2 className="section-title">When & Where</h2>
                 <div className="details-grid">
                     <div className="detail-card">
-                        <h3 className="secondary-heading">Ceremony &amp; Cocktail Hour</h3>
+                        <h3 className="secondary-heading">Ceremony</h3>
                         <p className="time">{WEDDING_DETAILS.date} | {WEDDING_DETAILS.time}</p>
                         <p className="location-note">
                             Location details will be sent to you via email once you RSVP.
-                        </p>
-                        <p className="cocktail-note">
-                            Join us for a short cocktail hour immediately after the ceremony.
                         </p>
                         <div className="action-buttons">
                             <a href="#" onClick={handleAddToCalendar} className="btn-secondary">
