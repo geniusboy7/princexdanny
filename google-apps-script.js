@@ -17,10 +17,9 @@
 // Sender on the geniustechhub.com domain, which is verified in Resend.
 var FROM_EMAIL = "Prince & Daniella <wedding@geniustechhub.com>";
 
-// Preferred: store the key in Project Settings > Script Properties as RESEND_API_KEY.
-// The fallback below lets you paste-and-run, but it commits the secret to the repo —
-// keep this repo private and rotate the key if it is ever exposed.
-var RESEND_API_KEY_FALLBACK = "re_CAyNQvYm_45VRTD9nHPCHqXjCPaDTWJ2X";
+// Store the key in Project Settings > Script Properties as RESEND_API_KEY.
+// This stays blank so the secret never lives in the repo.
+var RESEND_API_KEY_FALLBACK = "";
 
 // Location details that are kept off the public site and only shared by email.
 var EVENT_DETAILS = {
@@ -98,11 +97,25 @@ function sendLocationEmail(name, email) {
             '<p style="font-size: 16px; line-height: 1.6; margin-top: 24px;">With love,<br/>Prince &amp; Daniella</p>' +
         '</div>';
 
+    // Plain-text alternative — improves inbox placement and accessibility.
+    var text =
+        "Prince & Daniella\n\n" +
+        "Dear " + firstName + ",\n\n" +
+        "Thank you for your RSVP! Here are the details for the ceremony and the short cocktail hour that follows.\n\n" +
+        "Venue: " + d.venue + "\n" +
+        "Address: " + d.location + "\n" +
+        "Date: " + d.date + "\n" +
+        "Time: " + d.time + "\n\n" +
+        "Directions: " + d.mapsUrl + "\n\n" +
+        "We look forward to seeing you there.\n\nWith love,\nPrince & Daniella";
+
     var payload = {
         from: FROM_EMAIL,
-        to: [email],
+        to: email,
+        reply_to: FROM_EMAIL,
         subject: "Your invitation details — Prince & Daniella's Wedding",
-        html: html
+        html: html,
+        text: text
     };
 
     var response = UrlFetchApp.fetch("https://api.resend.com/emails", {
@@ -137,4 +150,13 @@ function escapeHtml(str) {
 
 function doGet(e) {
     return ContentService.createTextOutput("RSVP API is running!");
+}
+
+/**
+ * Run this directly from the editor to test the email + authorize scopes.
+ * Change the address below to your own, then press Run and check your inbox.
+ */
+function testEmail() {
+    sendLocationEmail("Test Guest", "kofiajk@gmail.com");
+    Logger.log("Test email sent — check the inbox (and spam) for that address.");
 }
