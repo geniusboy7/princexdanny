@@ -1,7 +1,25 @@
 .details {
+    position: relative;
+    isolation: isolate;
     padding: 8rem 2rem;
-    background-color: var(--white);
     text-align: center;
+    background-image: url('/backgrounds/whenwhere.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Deep-brown wash so the title and cards stay legible over the venue photo. */
+.details::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(rgba(54, 38, 36, 0.68), rgba(54, 38, 36, 0.58));
+}
+
+.details .section-title {
+    color: var(--white);
 }
 
 .details-grid {
@@ -14,14 +32,15 @@
 .detail-card {
     padding: 3rem;
     background-color: var(--off-white);
-    border: 1px solid rgba(197, 160, 89, 0.2);
+    border: 1px solid rgba(197, 160, 89, 0.4);
     border-radius: 8px;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.32);
     transition: var(--transition-smooth);
 }
 
 .detail-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 28px 55px rgba(0, 0, 0, 0.4);
     border-color: var(--rustic-gold);
 }
 

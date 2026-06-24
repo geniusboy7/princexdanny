@@ -101,8 +101,11 @@ button {
 /* Base Component Adjustments for Split View */
 .right-panel .hero {
   height: 90vh;
-  background-image: none !important;
-  background-color: var(--off-white);
+  /* Soft off-white wash keeps the airy floral photo readable behind dark text. */
+  background-image: linear-gradient(rgba(249, 247, 242, 0.82), rgba(249, 247, 242, 0.72)), url('/backgrounds/bg1.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   color: var(--coffee-brown);
 }
 

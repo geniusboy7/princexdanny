@@ -6,24 +6,90 @@
     background-color: var(--coffee-brown);
 }
 
-.slider-slide {
+.slide-pair {
     position: absolute;
     inset: 0;
-    background-size: cover;
-    background-position: center;
-    opacity: 0;
-    transition: opacity 1.5s ease-in-out, transform 6s ease-out;
-    transform: scale(1.05);
+    display: flex;
+    /* Hairline seam where the two photos meet in the middle. */
+    gap: 2px;
 }
 
-.slider-slide.active {
-    opacity: 1;
-    transform: scale(1);
+.slide-half {
+    width: 50%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+}
+
+/* Incoming pair: each half slides in from its outer edge to meet in the middle. */
+.slide-pair.entering .slide-half.left {
+    animation: slideInLeft 1.1s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.slide-pair.entering .slide-half.right {
+    animation: slideInRight 1.1s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Outgoing pair: fades out beneath the incoming pair. */
+.slide-pair.leaving {
+    animation: pairFadeOut 1.1s ease forwards;
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-101%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(101%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes pairFadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
 }
 
 .slider-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4));
-    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(to bottom, rgba(54, 38, 36, 0.12), rgba(54, 38, 36, 0.28));
+    z-index: 2;
+}
+
+/* Respect reduced-motion: skip the horizontal travel, gentle crossfade only. */
+@media (prefers-reduced-motion: reduce) {
+    .slide-pair.entering .slide-half.left,
+    .slide-pair.entering .slide-half.right {
+        animation: pairFadeIn 1s ease both;
+    }
+
+    @keyframes pairFadeIn {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
 }
