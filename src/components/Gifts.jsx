@@ -24,7 +24,7 @@ const GIFT_METHODS = [
         title: 'PayPal',
         rows: [
             { label: 'Email', value: 'Daniellaadjei70@gmail.com', copy: true },
-            { label: 'Currency', value: 'CAD' },
+            { label: 'Currency', value: 'CAD, USD, GBP' },
         ],
     },
     {
