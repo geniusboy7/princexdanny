@@ -117,6 +117,23 @@ const SuccessModal = ({ onClose, formData }) => {
                                 Add to Calendar
                             </button>
                         </div>
+
+                        <div className="invite-image-section">
+                            <h3>Your Invitation</h3>
+                            <img
+                                src="/princexdanny-invite.jpg"
+                                alt="Prince & Daniella wedding invitation"
+                                className="invite-image"
+                            />
+                            <a
+                                href="/princexdanny-invite.jpg"
+                                download="PrinceXDanny-Invitation.jpg"
+                                className="btn-action"
+                            >
+                                <Download size={18} />
+                                Save Invitation
+                            </a>
+                        </div>
                     </div>
                 ) : (
                     <div className="decline-section">

@@ -164,6 +164,33 @@
     box-shadow: 0 5px 15px rgba(0, 128, 128, 0.2);
 }
 
+.invite-image-section {
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(197, 160, 89, 0.25);
+    text-align: center;
+}
+
+.invite-image-section h3 {
+    margin-bottom: 1.25rem;
+    color: var(--primary-teal);
+}
+
+.invite-image {
+    width: 100%;
+    max-width: 480px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 12px 30px rgba(54, 38, 36, 0.18);
+    margin-bottom: 1.5rem;
+}
+
+.invite-image-section .btn-action {
+    display: inline-flex;
+    text-decoration: none;
+    margin: 0 auto;
+}
+
 .personalized-msg {
     margin-bottom: 2rem;
     font-size: 1.1rem;

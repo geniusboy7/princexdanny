@@ -27,7 +27,8 @@ var EVENT_DETAILS = {
     location: "Accra, Ghana",
     date: "August 8th, 2026",
     time: "3:00 PM",
-    mapsUrl: "https://maps.app.goo.gl/a3ij18RY6yqjSVNk8"
+    mapsUrl: "https://maps.app.goo.gl/a3ij18RY6yqjSVNk8",
+    inviteImageUrl: "https://princexdanny.vercel.app/princexdanny-invite.jpg"
 };
 // ---------------------------------------------------------------------------
 
@@ -93,6 +94,9 @@ function sendLocationEmail(name, email) {
             '<p style="text-align: center; margin: 28px 0;">' +
                 '<a href="' + d.mapsUrl + '" style="display: inline-block; padding: 12px 28px; background: #00827E; color: #ffffff; text-decoration: none; font-size: 13px; letter-spacing: 1px; text-transform: uppercase; border-radius: 4px;">Get Directions</a>' +
             '</p>' +
+            '<p style="text-align: center; margin: 8px 0 28px;">' +
+                '<img src="' + d.inviteImageUrl + '" alt="Prince and Daniella wedding invitation" style="width: 100%; max-width: 520px; height: auto; border-radius: 8px;" />' +
+            '</p>' +
             '<p style="font-size: 14px; line-height: 1.6; color: #6b5d57;">Please keep these details handy &mdash; we look forward to seeing you there.</p>' +
             '<p style="font-size: 16px; line-height: 1.6; margin-top: 24px;">With love,<br/>Prince &amp; Daniella</p>' +
         '</div>';
@@ -106,7 +110,8 @@ function sendLocationEmail(name, email) {
         "Address: " + d.location + "\n" +
         "Date: " + d.date + "\n" +
         "Time: " + d.time + "\n\n" +
-        "Directions: " + d.mapsUrl + "\n\n" +
+        "Directions: " + d.mapsUrl + "\n" +
+        "Your invitation: " + d.inviteImageUrl + "\n\n" +
         "We look forward to seeing you there.\n\nWith love,\nPrince & Daniella";
 
     var payload = {
