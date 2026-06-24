@@ -24,7 +24,7 @@ export const WEDDING_DETAILS = {
  * Extracted from the couple's mood board swatches.
  */
 export const WEDDING_COLORS = [
-    { name: "Carafe", hex: "#362624" },
+    { name: "Coffee Brown", hex: "#362624" },
     { name: "Gold", hex: "#C19A4B" },
     { name: "Teal", hex: "#00827E" },
     { name: "White", hex: "#FFFFFF" }

@@ -9,6 +9,7 @@ const GIFT_METHODS = [
             { label: 'Branch', value: 'Dansoman' },
             { label: 'Account Name', value: 'Daniella Owusua Adjei' },
             { label: 'Account Number', value: '1441002566992', copy: true },
+            { label: 'Currency', value: 'GHS' },
         ],
     },
     {
@@ -16,12 +17,14 @@ const GIFT_METHODS = [
         rows: [
             { label: 'Number', value: '0554804150', copy: true },
             { label: 'Name', value: 'Daniella Owusua Adjei' },
+            { label: 'Currency', value: 'GHS' },
         ],
     },
     {
         title: 'PayPal',
         rows: [
             { label: 'Email', value: 'Daniellaadjei70@gmail.com', copy: true },
+            { label: 'Currency', value: 'CAD' },
         ],
     },
     {
@@ -31,6 +34,7 @@ const GIFT_METHODS = [
             { label: 'Account Number', value: '6485818', copy: true },
             { label: 'Account Name', value: 'Daniella Owusua Adjei' },
             { label: 'Interac e-Transfer', value: 'Daniellaadjei70@gmail.com', copy: true },
+            { label: 'Currency', value: 'CAD' },
         ],
     },
     {

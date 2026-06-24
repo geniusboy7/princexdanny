@@ -47,6 +47,7 @@ const Details = () => {
                                         style={{ backgroundColor: color.hex }}
                                     ></span>
                                     <span className="color-name">{color.name}</span>
+                                    <span className="color-hex">{color.hex}</span>
                                 </div>
                             ))}
                         </div>
