@@ -15,7 +15,9 @@ const Hero = () => {
                 <h1 className="names">{WEDDING_DETAILS.groom} & {WEDDING_DETAILS.bride}</h1>
                 <p className="date">{WEDDING_DETAILS.displayDate} | {WEDDING_DETAILS.time}</p>
                 <Countdown targetDate={WEDDING_DETAILS.targetDate} />
+                {/* RSVP has ended — button hidden.
                 <button className="hero-rsvp-btn" onClick={scrollToRsvp}>RSVP Now</button>
+                */}
             </div>
         </section>
     );

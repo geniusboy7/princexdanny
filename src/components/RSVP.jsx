@@ -50,6 +50,9 @@ const RSVP = () => {
         <section className="rsvp" id="rsvp">
             <div className="container small">
                 <h2 className="section-title">RSVP</h2>
+                <p className="rsvp-intro">RSVP has ended</p>
+
+                {/* RSVP deadline has passed — form hidden.
                 <p className="rsvp-intro">We would be honored to have you with us. Please let us know if you can attend by {WEDDING_DETAILS.rsvpDeadline}.</p>
 
                 <form className="rsvp-form" onSubmit={handleSubmit}>
@@ -82,6 +85,7 @@ const RSVP = () => {
                         {isSubmitting ? 'Sending...' : 'Send RSVP'}
                     </button>
                 </form>
+                */}
             </div>
 
             {showSuccess && <SuccessModal onClose={() => {
