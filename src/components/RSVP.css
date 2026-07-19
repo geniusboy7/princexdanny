@@ -10,6 +10,69 @@
     font-size: 1.1rem;
 }
 
+.rsvp-gate {
+    max-width: 360px;
+    margin: -2.5rem auto 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    text-align: center;
+}
+
+.rsvp-gate-label {
+    font-size: 0.8rem;
+    color: var(--coffee-brown);
+    opacity: 0.7;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.rsvp-gate-row {
+    display: flex;
+    gap: 0.6rem;
+    width: 100%;
+}
+
+.rsvp-gate-input {
+    flex: 1;
+    padding: 0.8rem 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.rsvp-gate-input:focus {
+    outline: none;
+    border-color: var(--primary-teal);
+    box-shadow: 0 0 0 3px rgba(0, 128, 128, 0.1);
+}
+
+.rsvp-gate-btn {
+    padding: 0.8rem 1.4rem;
+    background-color: var(--primary-teal);
+    color: white;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.rsvp-gate-btn:hover {
+    background-color: var(--accent-teal);
+}
+
+.rsvp-gate-error {
+    font-size: 0.8rem;
+    color: #b3543f;
+    margin: 0;
+}
+
 .rsvp-form {
     max-width: 600px;
     margin: 0 auto;
